@@ -6,6 +6,7 @@ Then download node image and run it there. After runing it successfully, click d
 # Build image:
 
 docker build -f DockerFile -t so0oshiance/node .
+
 -f: is the name of our docker file in source code
 -t: is tag name to finde it in docker images
 . : is the path of our source code we wanna create image from
@@ -26,6 +27,11 @@ docker ps
 # To push your image into docker hub:
 
 docker login
+
 -insert username and password of your docker hub
-docker images - choose correct repository name from images
+
+docker images
+
+- choose correct repository name from images
+
 docker push [repository name for exp: so0oshiance/node]
