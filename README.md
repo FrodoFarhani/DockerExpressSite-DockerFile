@@ -8,7 +8,9 @@ Then download node image and run it there. After runing it successfully, click d
     docker build -f DockerFile -t so0oshiance/node .
 
 -f: is the name of our docker file in source code
+
 -t: is tag name to finde it in docker images
+
 . : is the path of our source code we wanna create image from
 
 # Run image
@@ -28,12 +30,18 @@ we should see our image is running here with our tag name and now we can test it
 
 # To push your image into docker hub:
 
+First you should login to docker hub
+
     docker login
 
 - insert username and password of your docker hub
 
-  docker images
+Then check your images with this command:
+
+    docker images
 
 - choose correct repository name from images
 
-  docker push [Repository/Tag name for exp: so0oshiance/node]
+Finally push your image to the docker hub
+
+    docker push [Repository/Tag name for exp: so0oshiance/node]
