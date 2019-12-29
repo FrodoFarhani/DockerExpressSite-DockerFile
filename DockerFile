@@ -1,0 +1,21 @@
+#FROM node:8.1
+#FROM node:latest
+FROM node
+MAINTAINER So0ochiance
+
+# These woudl be our enviroment variables that node can read them
+ENV NODE_ENV=production
+ENV PORT=3000
+
+# you can copy individual file or even folder
+# . means the whole folder we are in it after . we tell where to copy it in docker image
+COPY . /var/www
+# set the context for commands we wanna run, where we can run it from!
+WORKDIR /var/www
+# this will mount this particiular volume in the container into th folder on host system
+# this is -v in binfing source code
+#VOLUME ["/var/www"]
+RUN npm install
+# read from ENV port
+EXPOSE $PORT
+ENTRYPOINT ["npm","start"]
